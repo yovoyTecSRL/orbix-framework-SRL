@@ -5,7 +5,7 @@
  * con JWT, MFA y gestión de roles.
  */
 
-const { Sentinel } = require('orbix-framework');
+const Sentinel = require('../src/index.js');
 
 // Inicializar Sentinel
 const sentinel = new Sentinel({

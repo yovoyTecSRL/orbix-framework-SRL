@@ -5,7 +5,7 @@
  * que puede responder preguntas sobre productos y servicios.
  */
 
-const { AeNKI } = require('orbix-framework');
+const AeNKI = require('../src/index.js');
 
 // Configuración del chatbot
 const chatbot = new AeNKI({

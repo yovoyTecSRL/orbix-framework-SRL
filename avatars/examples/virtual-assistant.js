@@ -5,7 +5,7 @@
  * con avatar 3D, voz y capacidades conversacionales.
  */
 
-const { Avatar, VoiceEngine, ChatEngine } = require('orbix-framework/avatars');
+const { Avatar, VoiceEngine, ChatEngine } = require('../src/index.js');
 
 // Configuración del asistente
 const assistantConfig = {

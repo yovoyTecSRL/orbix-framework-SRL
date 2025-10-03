@@ -5,7 +5,7 @@
  * con múltiples widgets y visualizaciones.
  */
 
-const { Dashboard, Widget } = require('orbix-framework/dashboards');
+const { Dashboard, Widget } = require('../src/index.js');
 
 // Datos de ejemplo
 const salesData = {
