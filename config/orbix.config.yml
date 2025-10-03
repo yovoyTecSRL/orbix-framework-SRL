@@ -1,0 +1,284 @@
+# Orbix Framework - Configuración Global
+# Community Edition
+
+# Información del Proyecto
+project:
+  name: "Orbix Framework"
+  version: "1.0.0"
+  edition: "Community"
+  organization: "YovoyTec SRL"
+
+# AeNKI - Inteligencia Artificial
+aenki:
+  enabled: true
+  
+  # Motor de IA
+  ai_engine:
+    provider: "openai"  # openai, huggingface, local, azure
+    model: "gpt-4"
+    api_key: ${OPENAI_API_KEY}
+    temperature: 0.7
+    max_tokens: 2000
+    
+  # Procesamiento de Lenguaje Natural
+  nlp:
+    enabled: true
+    language: "es"
+    additional_languages: ["en", "pt"]
+    models:
+      - sentiment-analysis
+      - named-entity-recognition
+      - text-classification
+      - text-summarization
+    
+  # Machine Learning
+  ml:
+    enabled: true
+    auto_train: true
+    model_cache: true
+    cache_dir: "./models/cache"
+    
+  # Automatización
+  automation:
+    enabled: true
+    workflows: true
+    scheduling: "cron"
+
+# Sentinel - Seguridad
+sentinel:
+  enabled: true
+  
+  # Autenticación
+  authentication:
+    jwt:
+      enabled: true
+      secret: ${JWT_SECRET}
+      expiration: 86400  # 24 horas en segundos
+      algorithm: "HS256"
+      
+    mfa:
+      enabled: true
+      methods: ["totp", "email", "sms"]
+      
+    oauth:
+      enabled: false
+      providers: ["google", "github", "microsoft"]
+      
+  # Autorización
+  authorization:
+    type: "rbac"  # rbac o abac
+    default_role: "user"
+    
+  # Cifrado
+  encryption:
+    algorithm: "AES-256-GCM"
+    key_derivation: "PBKDF2"
+    key_rotation: true
+    rotation_days: 30
+    
+  # Políticas de Contraseñas
+  password_policy:
+    min_length: 12
+    require_uppercase: true
+    require_lowercase: true
+    require_numbers: true
+    require_special: true
+    expiration_days: 90
+    max_failed_attempts: 5
+    lockout_duration: 900  # 15 minutos
+    
+  # Monitoreo
+  monitoring:
+    enabled: true
+    log_level: "info"  # debug, info, warn, error
+    alert_channels: ["email", "slack"]
+    
+  # Cumplimiento
+  compliance:
+    gdpr: true
+    iso27001: true
+    audit_retention_days: 365
+
+# Dashboards - Visualización
+dashboards:
+  enabled: true
+  
+  # Configuración Visual
+  theme: "light"  # light, dark, corporate
+  language: "es"
+  
+  # Layout
+  layout:
+    type: "grid"
+    columns: 12
+    row_height: 50
+    margin: [10, 10]
+    
+  # Actualización
+  refresh:
+    enabled: true
+    interval: 5000  # milisegundos
+    
+  # Gráficos
+  charts:
+    library: "chartjs"  # chartjs, d3, echarts, plotly
+    animations: true
+    responsive: true
+    
+  # Exportación
+  export:
+    enabled: true
+    formats: ["pdf", "excel", "csv", "png"]
+    pdf_engine: "puppeteer"
+    
+  # Tiempo Real
+  realtime:
+    enabled: true
+    protocol: "websocket"
+    reconnect: true
+    reconnect_interval: 5000
+
+# Avatares - Interacción
+avatars:
+  enabled: true
+  
+  # Configuración por Defecto
+  default:
+    type: "3d"  # 2d, 3d, video
+    style: "corporate"
+    language: "es"
+    gender: "neutral"
+    
+  # Rendering
+  rendering:
+    engine: "three.js"  # three.js, babylon.js
+    quality: "high"  # low, medium, high
+    fps: 60
+    antialiasing: true
+    
+  # Voz
+  voice:
+    tts_enabled: true
+    tts_provider: "google"  # google, amazon, azure, elevenlabs
+    stt_enabled: true
+    stt_provider: "google"
+    default_language: "es-ES"
+    
+  # Personalidad
+  personality:
+    default_tone: "professional"  # casual, professional, friendly
+    empathy_level: 0.7  # 0-1
+    formality: 0.8  # 0-1
+    humor: 0.3  # 0-1
+    
+  # IA Conversacional
+  ai:
+    use_aenki: true
+    context_window: 10
+    memory: true
+    
+  # Canales
+  channels:
+    web: true
+    mobile: true
+    whatsapp: false
+    telegram: false
+    facebook: false
+
+# Base de Datos
+database:
+  type: "postgresql"  # postgresql, mysql, mongodb
+  host: ${DB_HOST:-localhost}
+  port: ${DB_PORT:-5432}
+  name: ${DB_NAME:-orbix}
+  user: ${DB_USER:-orbix}
+  password: ${DB_PASSWORD}
+  pool_size: 20
+  ssl: true
+  
+# Caché
+cache:
+  enabled: true
+  type: "redis"  # redis, memcached, memory
+  host: ${REDIS_HOST:-localhost}
+  port: ${REDIS_PORT:-6379}
+  password: ${REDIS_PASSWORD}
+  ttl: 3600  # segundos
+  
+# Logging
+logging:
+  level: "info"  # debug, info, warn, error
+  format: "json"  # json, text
+  output: ["console", "file"]
+  file:
+    path: "./logs/orbix.log"
+    max_size: "100MB"
+    max_files: 10
+    
+# API
+api:
+  host: "0.0.0.0"
+  port: 3000
+  cors:
+    enabled: true
+    origins: ["*"]
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"]
+  rate_limit:
+    enabled: true
+    window_ms: 900000  # 15 minutos
+    max_requests: 100
+    
+# Workers
+workers:
+  enabled: true
+  concurrency: 4
+  queues:
+    - name: "default"
+      priority: 1
+    - name: "ai-processing"
+      priority: 2
+    - name: "reports"
+      priority: 0
+      
+# Notificaciones
+notifications:
+  email:
+    enabled: true
+    provider: "smtp"  # smtp, sendgrid, ses
+    from: "noreply@orbix-framework.com"
+    smtp:
+      host: ${SMTP_HOST}
+      port: ${SMTP_PORT:-587}
+      user: ${SMTP_USER}
+      password: ${SMTP_PASSWORD}
+      secure: true
+  
+  slack:
+    enabled: false
+    webhook_url: ${SLACK_WEBHOOK_URL}
+    
+  sms:
+    enabled: false
+    provider: "twilio"  # twilio, vonage
+    
+# Métricas y Monitoreo
+metrics:
+  enabled: true
+  prometheus:
+    enabled: true
+    port: 9090
+  grafana:
+    enabled: false
+    
+# Desarrollo
+development:
+  debug: false
+  hot_reload: true
+  source_maps: true
+  
+# Producción
+production:
+  optimize: true
+  minify: true
+  compression: true
+  ssl_required: true

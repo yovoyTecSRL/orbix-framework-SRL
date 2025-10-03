@@ -1,0 +1,73 @@
+# Orbix Framework - Python Dependencies
+# Para instalación: pip install -r requirements.txt
+
+# Core
+python-dotenv==1.0.0
+pyyaml==6.0.1
+requests==2.31.0
+
+# Web Framework
+flask==3.0.0
+fastapi==0.104.1
+uvicorn==0.24.0
+
+# Base de Datos
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+pymongo==4.6.0
+redis==5.0.1
+
+# Seguridad (Sentinel)
+pyjwt==2.8.0
+cryptography==41.0.7
+bcrypt==4.1.1
+pyotp==2.9.0
+python-jose==3.3.0
+
+# IA y ML (AeNKI)
+openai==1.3.7
+anthropic==0.7.7
+transformers==4.36.0
+torch==2.1.1
+tensorflow==2.15.0
+scikit-learn==1.3.2
+numpy==1.26.2
+pandas==2.1.4
+spacy==3.7.2
+
+# NLP
+nltk==3.8.1
+textblob==0.17.1
+langchain==0.0.350
+langchain-openai==0.0.2
+
+# Dashboards
+plotly==5.18.0
+dash==2.14.2
+matplotlib==3.8.2
+seaborn==0.13.0
+
+# Avatares - Voz
+google-cloud-speech==2.22.1
+google-cloud-texttospeech==2.15.1
+boto3==1.34.5
+azure-cognitiveservices-speech==1.34.0
+
+# WebSockets
+websockets==12.0
+python-socketio==5.10.0
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+pytest-asyncio==0.21.1
+
+# Utilidades
+python-dateutil==2.8.2
+pytz==2023.3
+colorama==0.4.6
+tqdm==4.66.1
+
+# Documentación
+sphinx==7.2.6
+sphinx-rtd-theme==2.0.0
