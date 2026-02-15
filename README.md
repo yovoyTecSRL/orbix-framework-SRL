@@ -1,150 +1,249 @@
-# Orbix Framework – Community Edition
+# 🌌 Orbix Framework – Community Edition
 
-**Base abierta con AeNKI (IA), Sentinel (seguridad), dashboards y avatares para automatizar empresas.**
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Status](https://img.shields.io/badge/status-Community%20Edition-green)
+![Version](https://img.shields.io/badge/version-CE--1.0-informational)
 
-## 🌟 Descripción
+---
 
-Orbix Framework Community Edition es una plataforma integral de código abierto diseñada para automatizar y optimizar procesos empresariales. Integra inteligencia artificial, seguridad avanzada, visualización de datos y sistemas de interacción mediante avatares para crear soluciones empresariales completas.
+## 🚀 Overview
 
-## 🏗️ Componentes Principales
+**Orbix Framework – Community Edition (CE)** is an open-source modular AI infrastructure designed to help developers build intelligent automation systems with security, dashboards, and avatar-based interaction.
 
-### 🤖 AeNKI (IA)
-Motor de inteligencia artificial que proporciona:
-- Procesamiento de lenguaje natural (NLP)
-- Análisis predictivo y machine learning
-- Automatización inteligente de procesos
-- Asistentes virtuales y chatbots
-- Análisis de datos empresariales
+This edition provides a flexible foundation for:
 
-### 🛡️ Sentinel (Seguridad)
-Sistema de seguridad integral que incluye:
-- Autenticación y autorización multi-factor
-- Gestión de identidades y accesos (IAM)
-- Cifrado de datos en tránsito y en reposo
-- Auditoría y registro de eventos
-- Detección de amenazas y anomalías
-- Cumplimiento normativo (GDPR, ISO 27001)
+* AI-powered applications
+* Secure backend services
+* Interactive dashboards
+* AI avatar integrations
+* Modular automation systems
 
-### 📊 Dashboards
-Sistema de visualización y análisis:
-- Dashboards personalizables e interactivos
-- Visualización en tiempo real
-- Reportes y analíticas avanzadas
-- KPIs y métricas empresariales
-- Exportación de datos
-- Integración con múltiples fuentes de datos
+Orbix CE is lightweight, extensible, and developer-friendly.
 
-### 👤 Avatares
-Sistema de interacción humana:
-- Avatares virtuales personalizables
-- Asistentes visuales inteligentes
-- Interfaz de comunicación natural
-- Personalización de identidad corporativa
-- Integración con AeNKI para respuestas inteligentes
+---
 
-## 📁 Estructura del Proyecto
+# 🧠 Core Philosophy
+
+Orbix CE is built around:
+
+* 🔌 Modularity
+* 🔐 Security-first architecture
+* 🧩 Extensibility
+* ⚡ Developer productivity
+
+It is designed to be forked, extended, and customized.
+
+---
+
+# 🏗 Core Modules
+
+## 🤖 AeNKI – AI Core
+
+Provides:
+
+* Natural Language Processing (NLP)
+* AI-powered responses
+* Context-aware reasoning
+* Structured output support
+* Integration-ready architecture
+
+Supports multiple providers:
+
+* OpenAI
+* Azure
+* Local models (optional)
+
+---
+
+## 🛡 Sentinel – Security Layer
+
+Security & governance module including:
+
+* JWT authentication
+* Role-based access control
+* Rate limiting
+* Session tracking
+* AES-256 encryption configuration
+* API monitoring hooks
+
+Designed to be production-ready.
+
+---
+
+## 📊 Dashboards Module
+
+Interactive and customizable dashboards:
+
+* Real-time data visualization
+* KPI tracking
+* API usage analytics
+* Modular widget system
+* Export-ready architecture
+
+---
+
+## 👤 Avatar Module
+
+Provides a simple integration layer for AI avatars.
+
+Supports:
+
+* TalkingHead / WebGL avatars
+* Voice-to-text
+* Text-to-speech
+* Embedded iframe demo mode
+* 9:16 responsive layout support
+
+Example:
 
 ```
-orbix-framework-SRL/
-├── aenki/                 # Módulo de Inteligencia Artificial
-│   ├── src/              # Código fuente
-│   ├── docs/             # Documentación
-│   └── examples/         # Ejemplos de uso
-├── sentinel/             # Módulo de Seguridad
-│   ├── src/              # Código fuente
-│   ├── docs/             # Documentación
-│   └── examples/         # Ejemplos de uso
-├── dashboards/           # Módulo de Dashboards
-│   ├── src/              # Código fuente
-│   ├── docs/             # Documentación
-│   └── examples/         # Ejemplos de uso
-├── avatars/              # Módulo de Avatares
-│   ├── src/              # Código fuente
-│   ├── docs/             # Documentación
-│   └── examples/         # Ejemplos de uso
-├── config/               # Configuraciones globales
-├── scripts/              # Scripts de utilidad
-└── tests/                # Tests integrados
+examples/avatars/index.html
 ```
 
-## 🚀 Inicio Rápido
+Replace the iframe source with your avatar provider.
 
-### Requisitos Previos
-- Node.js >= 16.x o Python >= 3.8
-- Base de datos (PostgreSQL, MongoDB, o MySQL)
-- Redis (opcional, para caché)
+---
 
-### Instalación
+# 📁 Project Structure
+
+```
+orbix-framework-ce/
+├── core/
+│   ├── aenki/
+│   ├── routing/
+│   ├── messaging/
+│   ├── avatar/
+│   └── dashboards/
+├── security/
+│   └── sentinel/
+├── config/
+├── examples/
+├── scripts/
+├── tests/
+└── docs/
+```
+
+---
+
+# ⚙ Tech Stack (Flexible)
+
+Recommended stack:
+
+* Node.js or Python (FastAPI)
+* PostgreSQL
+* Redis (optional caching)
+* React / Next.js (frontend)
+* JWT authentication
+* Environment-based configuration
+
+---
+
+# 🚀 Quick Start
+
+### 1️⃣ Clone Repository
 
 ```bash
-# Clonar el repositorio
-git clone https://github.com/yovoyTecSRL/orbix-framework-SRL.git
-cd orbix-framework-SRL
+git clone https://github.com/your-org/orbix-framework-ce.git
+cd orbix-framework-ce
+```
 
-# Instalar dependencias (ejemplo con Node.js)
+### 2️⃣ Install Dependencies
+
+Node.js:
+
+```bash
 npm install
+```
 
-# O con Python
+Python:
+
+```bash
 pip install -r requirements.txt
+```
 
-# Configurar variables de entorno
-cp config/example.env config/.env
-# Editar config/.env con tus credenciales
+### 3️⃣ Configure Environment
 
-# Iniciar el framework
+```bash
+cp .env.example .env
+```
+
+Edit `.env` with your configuration values.
+
+### 4️⃣ Run
+
+```bash
 npm start
-# O
+# or
 python main.py
 ```
 
-## 💡 Casos de Uso
+Access:
 
-### Automatización Empresarial
-- Automatización de flujos de trabajo
-- Procesamiento inteligente de documentos
-- Gestión automatizada de clientes (CRM)
+```
+http://localhost:8000
+```
 
-### Análisis de Negocio
-- Dashboards ejecutivos en tiempo real
-- Análisis predictivo de ventas
-- Optimización de recursos
+---
 
-### Atención al Cliente
-- Chatbots inteligentes con avatares
-- Soporte 24/7 automatizado
-- Análisis de sentimientos
+# 🧪 Example Root Endpoint
 
-### Seguridad Corporativa
-- Monitoreo de seguridad continuo
-- Gestión de accesos y permisos
-- Cumplimiento normativo automatizado
+```python
+@app.get("/")
+def root():
+    return {"status": "ok", "message": "Hello, Orbix CE"}
+```
 
-## 🔧 Configuración
+---
+
+# 💡 Use Cases
+
+Orbix CE can be used to build:
+
+* AI assistants
+* Secure API backends
+* Automation systems
+* Internal company tools
+* AI dashboard platforms
+* Experimental AI products
+* Avatar-based interfaces
+
+---
+
+# 🔐 Security Principles
+
+Orbix CE enforces:
+
+* No hardcoded secrets
+* Environment variable configuration
+* Token-based authentication
+* Encryption-ready architecture
+* Modular security layer
+
+Developers are responsible for proper deployment security practices.
+
+---
+
+# 🛠 Configuration Example
 
 ### AeNKI
+
 ```javascript
-// config/aenki.config.js
 module.exports = {
   ai: {
-    provider: 'openai', // o 'local', 'azure'
+    provider: 'openai',
     model: 'gpt-4',
     temperature: 0.7
-  },
-  nlp: {
-    language: 'es',
-    sentiment: true
   }
 }
 ```
 
 ### Sentinel
+
 ```javascript
-// config/sentinel.config.js
 module.exports = {
   auth: {
     jwt: true,
-    mfa: true,
-    sessionTimeout: 3600
+    mfa: false
   },
   encryption: {
     algorithm: 'AES-256-GCM'
@@ -152,113 +251,52 @@ module.exports = {
 }
 ```
 
-## 📚 Documentación
+---
 
-Cada módulo tiene su propia documentación detallada:
-- [AeNKI Documentation](./aenki/docs/README.md)
-- [Sentinel Documentation](./sentinel/docs/README.md)
-- [Dashboards Documentation](./dashboards/docs/README.md)
-- [Avatares Documentation](./avatars/docs/README.md)
+# 🤝 Contributing
 
-## 🤝 Contribuir
+Contributions are welcome.
 
-¡Las contribuciones son bienvenidas! Por favor:
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add: AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+1. Fork the project
+2. Create a feature branch
+3. Commit your changes
+4. Open a Pull Request
 
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
-
-## 👥 Comunidad
-
-- **Website:** [orbix-framework.com](https://orbix-framework.com)
-- **Forum:** [community.orbix-framework.com](https://community.orbix-framework.com)
-- **Discord:** [Join our Discord](https://discord.gg/orbix)
-- **Twitter:** [@OrbixFramework](https://twitter.com/OrbixFramework)
-
-## 🙏 Agradecimientos
-
-Gracias a la comunidad open source y a todos los contribuidores que hacen posible este proyecto.
-
-## 📧 Contacto
-
-YovoyTec SRL - info@yovoytec.com
+Please keep modules clean and documented.
 
 ---
 
-**Orbix Framework** - Automatizando el futuro de las empresas 🚀
-# orbix-framework-SRL
-communidad-Orbix-framework
+# 📄 License
 
+MIT License.
 
-Orbix Framework Ce – Bootstrap (readme + Compose + Env)
-· other
-# README.md
+You are free to:
 
+* Use
+* Modify
+* Distribute
+* Commercialize
 
-@app.get("/")
-def root():
-    return {"status": "ok", "message": "Hello, Orbix CE"}
-```
-
-
-**`examples/avatars/index.html` (demo 9:16 adaptable):**
-```html
-<!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Avatares – Orbix CE</title>
-<style>
-  body{margin:0;display:grid;place-items:center;height:100vh;background:#0b0f14;color:#eaeef3;font-family:system-ui}
-  .wrap{width:min(95vw,420px);aspect-ratio:9/16;border:1px solid #223;border-radius:16px;overflow:hidden;background:#111}
-  iframe{width:100%;height:100%;border:0}
-  .hint{margin:12px 0 0;opacity:.7;font-size:.9rem;text-align:center}
-</style></head>
-<body>
-  <div class="wrap">
-    <iframe src="https://example.com/avatar-demo" title="Avatar"></iframe>
-  </div>
-  <div class="hint">9:16 responsive • reemplaza el src por tu HeyGen/TalkingHead</div>
-</body></html>
-```
-
+With proper attribution.
 
 ---
 
+# 🌍 Community
 
-# .env.example
+* GitHub Discussions
+* Issues & Feature Requests
+* Pull Requests
 
-
-```dotenv
-# ==== Postgres ====
-POSTGRES_USER=orbix
-POSTGRES_PASSWORD=orbix123
-POSTGRES_DB=orbix_ce
-POSTGRES_PORT=5432
-
-
-# ==== Redis ====
-REDIS_PORT=6379
-
-
-# ==== Servicios demo ====
-API_PORT=8000
-AVATAR_PORT=8080
-PORTAINER_PORT=9000
-
-
-# ==== Integraciones (placeholders) ====
-# OPENAI_API_KEY=sk-xxxx
-# TELEGRAM_BOT_TOKEN=xxxx
-# ODOO_URL=https://erp.example.com
-# ODOO_KEY=xxxx
-```
-
+We encourage experimentation and extensions.
 
 ---
 
+# 🎯 Vision
 
-> Archivos opcionales sugeridos para próximas confirmaciones: `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `.gitignore`, plantillas de PR/Issue y workflows de CI actualizados a `actions/*@v4`.
+Orbix Framework CE is designed to be:
+
+* A foundation for AI experimentation
+* A secure modular backend template
+* A starting point for larger AI systems
+
+> Build intelligent systems without starting from scratch.
