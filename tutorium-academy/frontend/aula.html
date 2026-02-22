@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aula en Vivo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Aula en Vivo</h1>
+  <div id="avatar-panel">
+    <video id="avatar-video" width="160" height="120" controls autoplay loop>
+      <source src="avatar-placeholder.mp4" type="video/mp4">
+      Video no disponible
+    </video>
+  </div>
+  <canvas id="whiteboard" width="400" height="300"></canvas>
+  <div>
+    <canvas id="chart" width="400" height="150"></canvas>
+  </div>
+  <div>
+    <input id="chat-input" placeholder="Pregunta en clase...">
+    <button onclick="sendChat()">Enviar</button>
+    <div id="chat-log"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="aula.js"></script>
+</body>
+</html>
