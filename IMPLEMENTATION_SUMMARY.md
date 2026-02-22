@@ -320,15 +320,45 @@ El framework está completamente implementado y listo para:
 - ✅ Contribuciones de la comunidad
 - ✅ Casos de uso empresariales
 
-## 📞 Próximos Pasos Sugeridos
 
-1. Instalar dependencias reales (npm install)
-2. Configurar APIs externas (OpenAI, etc.)
-3. Desarrollar tests unitarios
-4. Implementar integraciones reales
-5. Crear más ejemplos de uso
-6. Publicar en npm/PyPI
+# Phase 1: Repository Restructuring Proposal
+
+## Purpose
+Establish strict open-core boundaries, enforce access control, and enable modular community contributions.
+
+## Folder Structure
+- /core: Proprietary engine (AeNKI, Sentinel, Routing, Myndra)
+- /community: Public extension layer
+- /connectors: Integrations (Odoo, Azure, etc.)
+- /protocol: Orbix Protocol specification
+- /sdk: Extension development toolkit
+- /deployment: Azure, Docker, CI/CD
+- /website: Community landing page
+
+## Enforcement Strategy
+- /core is private, only maintainers can merge
+- Public APIs exposed via /protocol
+- Community PRs limited to /community, /connectors, /website, /sdk
+- Automated CI checks block changes to /core from non-maintainers
+- Plugin injection system: /core loads plugins from /community via documented interfaces
+
+## Access Control Model
+- GitHub branch protection for /core
+- CODEOWNERS file restricts /core to maintainers
+- PR templates require justification for boundary changes
+- Automated CI checks for directory boundaries
+
+## PR-Based Migration Plan
+- Phase 1 PR: Restructure folders, add CODEOWNERS, update CI/CD
+- Migration guide for contributors
+- No destructive refactors; all changes via PRs, reviewed by maintainers
+
+## Branch Strategy
+- main: stable, production-ready
+- develop: integration branch for new features
+- core-private: restricted branch for /core updates
+- feature/*: short-lived branches for proposals
 
 ---
 
-**Orbix Framework Community Edition** - ¡Implementación Completa! 🎉
+_Last updated: 2026-02-22_

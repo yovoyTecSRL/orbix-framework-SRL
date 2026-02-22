@@ -1,0 +1,14 @@
+# CODEOWNERS
+
+# /core is proprietary. Only maintainers can approve changes.
+/core/ @orbix-maintainers
+
+# /protocol and /deployment require maintainer review.
+/protocol/ @orbix-maintainers
+/deployment/ @orbix-maintainers
+
+# /community, /connectors, /sdk, /website are open for community PRs.
+/community/ @orbix-community
+/connectors/ @orbix-community
+/sdk/ @orbix-community
+/website/ @orbix-community
